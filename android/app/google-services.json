@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883803361821",
+    "project_id": "ndoto-tumaini",
+    "storage_bucket": "ndoto-tumaini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883803361821:android:49084db2cf7d4e16952cf4",
+        "android_client_info": {
+          "package_name": "domain.name.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883803361821-v0uguul6ut9gjnasmc4j7fqddv65544j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmJ1t4-HyDQB718Q-DKq1yr5Zadb_8bD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883803361821-v0uguul6ut9gjnasmc4j7fqddv65544j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
