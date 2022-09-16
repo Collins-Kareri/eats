@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/ui/app_bar.dart';
-import 'package:firstapp/ui/foods.dart';
+import 'package:firstapp/pages/content/homepage_content.dart';
 import 'package:firstapp/ui/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,22 +20,35 @@ class _HomePageState extends State<HomePage> {
     const Tab(text: "Vegeterian"),
   ];
 
+  static late List<Widget> _myTabs;
+
+  int _selectedIndex = 0;
+
+  _HomePageState() {
+    _myTabs = tabs;
+  }
+
+  static final List<Widget> pageContent = [
+    HomePageContent(_myTabs),
+    const Center(child: Text("tickets")),
+    const Center(child: Text("order")),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: tabs.length,
       child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize:  const Size.fromHeight(80.0),
-            child: MyAppBar(tabs)
-          ),
-          body: Column(
-            children: [
-              Foods('appertizers'),
-            ],
-          ),
-          bottomNavigationBar: const BottomNavBar()
-      ),
+          appBar: const PreferredSize(
+              preferredSize: Size.fromHeight(50.0), child: MyAppBar()),
+          body: pageContent[_selectedIndex],
+          bottomNavigationBar: BottomNavBar(_selectedIndex, _onItemTapped)),
     );
   }
 }
