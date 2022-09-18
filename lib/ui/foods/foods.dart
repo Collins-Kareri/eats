@@ -28,11 +28,11 @@ class Foods extends StatelessWidget {
           .where("type", isEqualTo: _foodCategory)
           .get();
 
-      print(firestoreRes.docs.asMap());
+      print('data $firestoreRes.docs.asMap()');
       foods = firestoreRes;
       return firestoreRes;
     } catch (err) {
-      print(err);
+      print('err $err');
       rethrow;
     }
   }

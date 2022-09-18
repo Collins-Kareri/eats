@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firstapp/pages/cart.dart';
+import 'package:firstapp/pages/account.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -12,11 +14,21 @@ class MyAppBar extends StatelessWidget {
       elevation: 0,
       actions: [
         IconButton(
-            onPressed: (() {}),
+            onPressed: (() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Cart()),
+              );
+            }),
             iconSize: 28.0,
             icon: const Icon(Icons.shopping_cart_sharp)),
         IconButton(
-            onPressed: (() {}),
+            onPressed: (() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Account()),
+              );
+            }),
             iconSize: 28.0,
             icon: const Icon(Icons.account_circle_sharp))
       ],

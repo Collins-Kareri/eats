@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/ui/tabs.dart';
-import 'package:firstapp/ui/foods.dart';
+import 'package:firstapp/ui/foods/foods.dart';
 
 class HomePageContent extends StatelessWidget {
   late final List<Widget> _myTabs;

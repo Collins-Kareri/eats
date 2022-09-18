@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDmJ1t4-HyDQB718Q-DKq1yr5Zadb_8bD0',
-    appId: '1:883803361821:android:49084db2cf7d4e16952cf4',
+    appId: '1:883803361821:android:b3d104970979e8a9952cf4',
     messagingSenderId: '883803361821',
     projectId: 'ndoto-tumaini',
     storageBucket: 'ndoto-tumaini.appspot.com',

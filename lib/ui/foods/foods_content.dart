@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firstapp/ui/image.dart';
 
 class FoodsContent extends StatelessWidget {
   late final dynamic _foods;
@@ -26,7 +27,7 @@ class FoodsContent extends StatelessWidget {
                         color: Colors.grey[200],
                         borderRadius:
                             const BorderRadius.all(Radius.circular(4))),
-                    child: Image.network(_foods.docs[index]["coverImg"]),
+                    child: MyImage(_foods.docs[index]["coverImg"]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
