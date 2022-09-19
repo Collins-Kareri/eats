@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/ui/foods/foods_content.dart';
+import 'package:firstapp/widgets/foods/foods_content.dart';
 
 class Foods extends StatelessWidget {
   late final String _foodCategory;

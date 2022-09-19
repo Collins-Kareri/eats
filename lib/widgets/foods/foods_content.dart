@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/ui/image.dart';
+import 'package:firstapp/widgets/image.dart';
 
 class FoodsContent extends StatelessWidget {
   late final dynamic _foods;
