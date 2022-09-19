@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/ui/app_bar.dart';
-import 'package:firstapp/pages/home/content/homepage_content.dart';
+import 'package:firstapp/screens/home/homepage_content.dart';
 import 'package:firstapp/ui/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {

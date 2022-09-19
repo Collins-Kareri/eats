@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/pages/cart.dart';
-import 'package:firstapp/pages/account.dart';
+import 'package:firstapp/screens/cart.dart';
+import 'package:firstapp/screens/account.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
