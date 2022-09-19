@@ -9,8 +9,6 @@ class MyAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text('K A Y F I S H'),
-      backgroundColor: Colors.grey[50],
-      foregroundColor: Colors.grey[600],
       elevation: 0,
       actions: [
         IconButton(

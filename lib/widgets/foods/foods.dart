@@ -1,15 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/widgets/foods/foods_content.dart';
+import 'package:firstapp/widgets/foods/ui_elements/card.dart';
 
 class Foods extends StatelessWidget {
   late final String _foodCategory;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
-  dynamic foods;
+  late final dynamic foods;
 
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-    foregroundColor: Colors.grey[600],
-    backgroundColor: Colors.grey[200],
     minimumSize: const Size(88, 36),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -27,12 +25,9 @@ class Foods extends StatelessWidget {
           .collection("foods")
           .where("type", isEqualTo: _foodCategory)
           .get();
-
-      print('data $firestoreRes.docs.asMap()');
       foods = firestoreRes;
       return firestoreRes;
     } catch (err) {
-      print('err $err');
       rethrow;
     }
   }
@@ -47,17 +42,15 @@ class Foods extends StatelessWidget {
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
+                children: const [
+                  Icon(
                     Icons.error,
                     size: 28.0,
                   ),
                   Text(
                     "Error occured fetching",
-                    style: TextStyle(
-                        color: Colors.grey[900],
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -66,11 +59,8 @@ class Foods extends StatelessWidget {
         } else if (snapshot.hasData) {
           return FoodsContent(foods);
         } else {
-          return Expanded(
-            child: Center(
-                child: CircularProgressIndicator(
-              color: Colors.grey[900],
-            )),
+          return const Expanded(
+            child: Center(child: CircularProgressIndicator()),
           );
         }
       },

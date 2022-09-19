@@ -8,8 +8,6 @@ class Cart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("C a r t"),
-        backgroundColor: Colors.grey[50],
-        foregroundColor: Colors.grey[600],
         elevation: 0,
         leading: IconButton(
             onPressed: () {

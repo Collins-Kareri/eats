@@ -20,12 +20,11 @@ class MyImage extends StatelessWidget {
             return child;
           }
           return Center(
-            child: CircularProgressIndicator(
+            child: LinearProgressIndicator(
               value: loadingProgress.expectedTotalBytes != null
                   ? loadingProgress.cumulativeBytesLoaded /
                       loadingProgress.expectedTotalBytes!
                   : null,
-              color: Colors.grey[900],
             ),
           );
         },

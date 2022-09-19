@@ -8,8 +8,6 @@ class Account extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("A c c o u n t"),
-        backgroundColor: Colors.grey[50],
-        foregroundColor: Colors.grey[600],
         elevation: 0,
         leading: IconButton(
             onPressed: () {
