@@ -7,14 +7,6 @@ class MyTab extends StatelessWidget {
     _tabs = tabs;
   }
 
-  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-    elevation: 1.0,
-    minimumSize: const Size(88, 36),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
     return TabBar(

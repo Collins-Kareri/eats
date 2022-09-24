@@ -2,28 +2,27 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firstapp/widgets/foods/ui_elements/card.dart';
 
-class Foods extends StatelessWidget {
+class Foods extends StatefulWidget {
   late final String _foodCategory;
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
-  late final dynamic foods;
-
-  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-    minimumSize: const Size(88, 36),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-    ),
-  );
 
   Foods(String foodCategory, {super.key}) {
     _foodCategory = foodCategory;
-    getFood();
   }
+
+  @override
+  State<Foods> createState() => _FoodsState();
+}
+
+class _FoodsState extends State<Foods> {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  dynamic foods;
 
   getFood() async {
     try {
       final firestoreRes = await _db
           .collection("foods")
-          .where("type", isEqualTo: _foodCategory)
+          .where("type", isEqualTo: widget._foodCategory)
           .get();
       foods = firestoreRes;
       return firestoreRes;

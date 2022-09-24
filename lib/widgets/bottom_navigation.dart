@@ -15,6 +15,7 @@ class BottomNavBar extends StatelessWidget {
         iconSize: 28.0,
         selectedFontSize: 18.0,
         unselectedFontSize: 16.0,
+        selectedItemColor: Colors.black,
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
@@ -24,7 +25,7 @@ class BottomNavBar extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.theaters_sharp),
-            label: 'Tickets',
+            label: 'Events',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.delivery_dining_sharp),

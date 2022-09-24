@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:firstapp/providers/cart_provider.dart';
 
 class CardBottom extends StatelessWidget {
   late final String _price;
@@ -7,6 +9,17 @@ class CardBottom extends StatelessWidget {
   CardBottom(price, foodname, {super.key}) {
     _price = price;
     _foodname = foodname;
+  }
+
+  void _handleAddToCart(BuildContext context) {
+    context.read<MyCart>().addItem({'foodName': _foodname, 'price': _price});
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('$_foodname added to cart.'),
+        duration: const Duration(milliseconds: 8000),
+      ),
+    );
   }
 
   @override
@@ -31,7 +44,9 @@ class CardBottom extends StatelessWidget {
             children: [
               Text(_price),
               OutlinedButton(
-                  onPressed: (() {}), child: const Text("Add to cart"))
+                onPressed: (() => _handleAddToCart(context)),
+                child: const Text("Add to cart"),
+              )
             ],
           )
         ],
