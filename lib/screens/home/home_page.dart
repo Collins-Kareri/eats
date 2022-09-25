@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/widgets/app_bar.dart';
-import 'package:provider/provider.dart';
-import 'package:firstapp/providers/cart_provider.dart';
 import 'package:firstapp/screens/home/homepage_content.dart';
 import 'package:firstapp/screens/events.dart';
 import 'package:firstapp/screens/orders.dart';
@@ -48,17 +46,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: tabs.length,
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => MyCart()),
-        ],
-        child: Scaffold(
-            appBar: const PreferredSize(
-                preferredSize: Size.fromHeight(50.0), child: MyAppBar()),
-            body: pageContent[_currentPageIndex],
-            bottomNavigationBar:
-                BottomNavBar(_currentPageIndex, _onItemTapped)),
-      ),
+      child: Scaffold(
+          appBar: const PreferredSize(
+              preferredSize: Size.fromHeight(50.0), child: MyAppBar()),
+          body: pageContent[_currentPageIndex],
+          bottomNavigationBar: BottomNavBar(_currentPageIndex, _onItemTapped)),
     );
   }
 }

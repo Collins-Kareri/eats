@@ -17,7 +17,8 @@ class CardBottom extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('$_foodname added to cart.'),
-        duration: const Duration(milliseconds: 8000),
+        dismissDirection: DismissDirection.horizontal,
+        behavior: SnackBarBehavior.floating,
       ),
     );
   }

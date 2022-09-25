@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/screens/home/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'package:firstapp/providers/cart_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,18 +17,23 @@ void main() async {
       side: MaterialStateProperty.resolveWith(
           (states) => const BorderSide(color: Colors.black)));
 
-  runApp(MaterialApp(
-    title: 'Flutter Demo',
-    theme: ThemeData(
-      primarySwatch: Colors.blueGrey,
-      outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),
-      indicatorColor: Colors.black,
-      tabBarTheme: const TabBarTheme(
-        labelColor: Colors.black,
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => MyCart()),
+    ],
+    child: MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+        outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),
+        indicatorColor: Colors.black,
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.black,
+        ),
+        bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black),
+        useMaterial3: true,
       ),
-      bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black),
-      useMaterial3: true,
+      home: const HomePage(),
     ),
-    home: const HomePage(),
   ));
 }

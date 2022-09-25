@@ -19,6 +19,8 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List cartItems = context.watch<MyCart>().cartItems;
+
     return AppBar(
       title: const Text('K A Y F I S H'),
       elevation: 0,
@@ -28,7 +30,7 @@ class MyAppBar extends StatelessWidget {
           iconSize: 28.0,
           icon: Badge(
             badgeContent: Text(
-              context.watch<MyCart>().cartItems.length.toString(),
+              cartItems.length.toString(),
               style: const TextStyle(
                 color: Colors.black,
               ),
