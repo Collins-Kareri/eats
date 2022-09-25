@@ -2,65 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
 
-class Cart extends StatelessWidget {
-  const Cart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("C a r t"),
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          iconSize: 28.0,
-          icon: const Icon(Icons.arrow_back_rounded),
-        ),
-      ),
-      body: Column(
-        children: [
-          const CartItems(),
-          Column(
-            children: const [
-              TotalPrice(),
-              OrderButton(),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CartItems extends StatelessWidget {
-  const CartItems({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final cartItems = context.watch<MyCart>().cartItems;
-
-    return cartItems.isNotEmpty
-        ? CartItemDisplay(cartItems)
-        : const EmptyCartState();
-  }
-}
-
-class EmptyCartState extends StatelessWidget {
-  const EmptyCartState({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Expanded(child: Center(child: Text("cart is empty")));
-  }
-}
-
-class CartItemDisplay extends StatelessWidget {
+class CartItemCard extends StatelessWidget {
   late final List _cartItems;
 
   final ButtonStyle cartItemButtonStyle = IconButton.styleFrom(
@@ -73,7 +15,7 @@ class CartItemDisplay extends StatelessWidget {
     ),
   );
 
-  CartItemDisplay(List cartItems, {super.key}) {
+  CartItemCard(List cartItems, {super.key}) {
     _cartItems = cartItems;
   }
 
@@ -99,19 +41,23 @@ class CartItemDisplay extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               width: 100.0,
                               height: 100.0,
                               color: Colors.black,
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(_cartItems[index]["foodName"]),
-                                Text(_cartItems[index]["price"]),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(_cartItems[index]["foodName"]),
+                                  Text(_cartItems[index]["price"]),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -168,81 +114,6 @@ class CartItemDisplay extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class OrderButton extends StatelessWidget {
-  const OrderButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FractionallySizedBox(
-          widthFactor: 1,
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.black,
-              fixedSize: const Size.fromWidth(90.0),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(16.0),
-                ),
-              ),
-              padding: const EdgeInsets.only(
-                top: 16.0,
-                bottom: 16.0,
-              ),
-              elevation: 4.0,
-            ),
-            child: const Text(
-              "Place order",
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TotalPrice extends StatelessWidget {
-  const TotalPrice({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final total = context.watch<MyCart>().total;
-
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            "Total",
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            'ksh. $total',
-            style: const TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
-import 'package:firstapp/screens/cart.dart';
+import 'package:firstapp/screens/mycart/cart_page.dart';
 import 'package:firstapp/screens/account.dart';
 
 class MyAppBar extends StatelessWidget {
