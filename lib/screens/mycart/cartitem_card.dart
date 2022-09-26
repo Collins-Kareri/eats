@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
+import 'package:firstapp/providers/food_image.dart';
 
 class CartItemCard extends StatelessWidget {
   late final List _cartItems;
@@ -22,11 +23,14 @@ class CartItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final editCart = context.read<MyCart>();
+    final foodImage = context.read<FoodImages>();
 
     return Expanded(
       child: ListView.builder(
         itemCount: _cartItems.length,
         itemBuilder: (context, index) {
+          final coverImg = foodImage.getImage(_cartItems[index]["foodname"]);
+
           return Padding(
             padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: Padding(
@@ -44,17 +48,42 @@ class CartItemCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 100.0,
                               height: 100.0,
-                              color: Colors.black,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  coverImg,
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.medium,
+                                  loadingBuilder:
+                                      (context, child, loadingProgress) {
+                                    if (loadingProgress == null) {
+                                      return child;
+                                    }
+                                    return Center(
+                                      child: CircularProgressIndicator(
+                                        value: loadingProgress
+                                                    .expectedTotalBytes !=
+                                                null
+                                            ? loadingProgress
+                                                    .cumulativeBytesLoaded /
+                                                loadingProgress
+                                                    .expectedTotalBytes!
+                                            : null,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(_cartItems[index]["foodName"]),
+                                  Text(_cartItems[index]["foodname"]),
                                   Text(_cartItems[index]["price"]),
                                 ],
                               ),

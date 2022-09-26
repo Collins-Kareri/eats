@@ -3,6 +3,7 @@ import 'package:firstapp/screens/home/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
+import 'package:firstapp/providers/food_image.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,7 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => MyCart()),
+      ChangeNotifierProvider(create: (_) => FoodImages()),
     ],
     child: MaterialApp(
       title: 'Flutter Demo',

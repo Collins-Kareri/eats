@@ -12,7 +12,7 @@ class CardBottom extends StatelessWidget {
   }
 
   void _handleAddToCart(BuildContext context) {
-    context.read<MyCart>().addItem({'foodName': _foodname, 'price': _price});
+    context.read<MyCart>().addItem({'foodname': _foodname, 'price': _price});
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

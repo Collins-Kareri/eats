@@ -26,7 +26,7 @@ class MyCart with ChangeNotifier {
 
   void addItem(Map item) {
     final index = _itemsInCart
-        .indexWhere((element) => element['foodName'] == item["foodName"]);
+        .indexWhere((element) => element['foodname'] == item["foodname"]);
 
     if (index >= 0) {
       addItemCount(index);
