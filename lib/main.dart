@@ -56,7 +56,7 @@ void main() async {
         bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     ),
   ));
 }

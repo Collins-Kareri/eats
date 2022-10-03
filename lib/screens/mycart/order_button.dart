@@ -2,20 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/order_provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
-import 'package:firstapp/screens/orders.dart';
+import 'package:firstapp/screens/home/home_page.dart';
+import 'package:firstapp/widgets/bottom_navigation.dart';
 
-class OrderButton extends StatelessWidget {
-  OrderButton({
+class OrderButton extends StatefulWidget {
+  const OrderButton({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<OrderButton> createState() => _OrderButtonState();
+}
+
+class _OrderButtonState extends State<OrderButton> {
   final myInputController = TextEditingController();
 
   void navigateToOrders(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {
-        return const Orders();
+        return HomePage(
+          index: 2,
+        );
       }),
     );
   }

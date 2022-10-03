@@ -6,7 +6,11 @@ import 'package:firstapp/screens/orders.dart';
 import 'package:firstapp/widgets/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  late int _currentPageIndex;
+
+  HomePage({super.key, int index = 0}) {
+    _currentPageIndex = index;
+  }
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,8 +28,6 @@ class _HomePageState extends State<HomePage> {
 
   static late List<Widget> _myTabs;
 
-  int _currentPageIndex = 0;
-
   _HomePageState() {
     _myTabs = tabs;
   }
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _currentPageIndex = index;
+      widget._currentPageIndex = index;
     });
   }
 
@@ -49,8 +51,9 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
           appBar: const PreferredSize(
               preferredSize: Size.fromHeight(50.0), child: MyAppBar()),
-          body: pageContent[_currentPageIndex],
-          bottomNavigationBar: BottomNavBar(_currentPageIndex, _onItemTapped)),
+          body: pageContent[widget._currentPageIndex],
+          bottomNavigationBar:
+              BottomNavBar(widget._currentPageIndex, _onItemTapped)),
     );
   }
 }

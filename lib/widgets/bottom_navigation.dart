@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   late final int _currentIndex;
   late final dynamic _onItemTapped;
 
@@ -10,14 +10,21 @@ class BottomNavBar extends StatelessWidget {
   }
 
   @override
+  State<BottomNavBar> createState() => BottomNavBarState();
+}
+
+class BottomNavBarState extends State<BottomNavBar> {
+  final GlobalKey bottomNavBarGlobalKey = GlobalKey(debugLabel: 'bottomAppBar');
+  @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+        key: bottomNavBarGlobalKey,
         iconSize: 28.0,
         selectedFontSize: 18.0,
         unselectedFontSize: 16.0,
         selectedItemColor: Colors.black,
-        currentIndex: _currentIndex,
-        onTap: _onItemTapped,
+        currentIndex: widget._currentIndex,
+        onTap: widget._onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_sharp),
