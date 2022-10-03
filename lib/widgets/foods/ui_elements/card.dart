@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firstapp/widgets/foods/ui_elements/image.dart';
 import 'package:firstapp/widgets/foods/ui_elements/card_bottom.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/food_image.dart';
+import 'package:firstapp/providers/food_image_provider.dart';
 
 class FoodsContent extends StatefulWidget {
   late final dynamic _foods;

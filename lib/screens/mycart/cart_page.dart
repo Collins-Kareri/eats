@@ -26,8 +26,8 @@ class Cart extends StatelessWidget {
         children: [
           const CartPageBody(),
           Column(
-            children: const [
-              TotalPrice(),
+            children: [
+              const TotalPrice(),
               OrderButton(),
             ],
           ),
