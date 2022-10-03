@@ -14,23 +14,57 @@ class OrderButton extends StatelessWidget {
         child: FractionallySizedBox(
           widthFactor: 1,
           child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.black,
-              backgroundColor: Colors.blueGrey,
-              surfaceTintColor: Colors.blueGrey,
-              fixedSize: const Size.fromWidth(90.0),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(16.0),
-                ),
-              ),
-              padding: const EdgeInsets.only(
-                top: 16.0,
-                bottom: 16.0,
-              ),
-              elevation: 4.0,
-            ),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return SimpleDialog(
+                    titlePadding: const EdgeInsets.only(
+                      top: 16.0,
+                      bottom: 8.0,
+                      left: 24.0,
+                      right: 24.0,
+                    ),
+                    contentPadding: const EdgeInsets.only(
+                      top: 16.0,
+                      bottom: 16.0,
+                      left: 24.0,
+                      right: 24.0,
+                    ),
+                    title: const Text('Please enter your location.'),
+                    children: [
+                      Column(
+                        children: [
+                          const TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Enter location',
+                              isDense: true,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {},
+                                  child: const Text('Cancel'),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: const Text('Submit'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
             child: const Text(
               "Place order",
             ),
