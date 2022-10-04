@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:firstapp/providers/order_provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
 import 'package:firstapp/screens/home/home_page.dart';
-import 'package:firstapp/widgets/bottom_navigation.dart';
 
 class OrderButton extends StatefulWidget {
   const OrderButton({

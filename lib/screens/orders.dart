@@ -31,17 +31,27 @@ class OrderDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _orders.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          leading: const Icon(Icons.bike_scooter_outlined),
-          title: const Text('On the way'),
-          subtitle: Text('To: ${_orders[index]["location"]}'),
-          trailing: const Text('Estimated 5 mins'),
-          isThreeLine: true,
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 16.0,
+      ),
+      child: ListView.builder(
+        itemCount: _orders.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: const Icon(
+              Icons.bike_scooter_outlined,
+              size: 32.0,
+            ),
+            title: const Text('On the way'),
+            subtitle: Text('To: ${_orders[index]["location"]}'),
+            trailing: const Text('Estimated 5 mins'),
+            isThreeLine: true,
+            visualDensity: VisualDensity.comfortable,
+            iconColor: Colors.black,
+          );
+        },
+      ),
     );
   }
 }
