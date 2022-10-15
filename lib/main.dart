@@ -22,17 +22,16 @@ void main() async {
 
   final ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
     foregroundColor: Colors.black,
-    backgroundColor: Colors.blueGrey,
-    surfaceTintColor: Colors.blueGrey,
+    backgroundColor: Colors.grey,
+    surfaceTintColor: Colors.grey,
     fixedSize: const Size.fromWidth(90.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(8.0),
       ),
     ),
-    padding: const EdgeInsets.only(
-      top: 16.0,
-      bottom: 16.0,
+    padding: const EdgeInsets.symmetric(
+      vertical: 8.0,
     ),
     elevation: 4.0,
   );
@@ -69,6 +68,11 @@ void main() async {
       title: 'Flutter Demo',
       theme: ThemeData(
         cardTheme: myCardTheme,
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(),
+        ),
         primarySwatch: Colors.blueGrey,
         dialogTheme: myDialogTheme,
         outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),

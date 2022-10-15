@@ -5,6 +5,7 @@ import 'package:firstapp/providers/cart_provider.dart';
 import 'package:firstapp/screens/mycart/cart_page.dart';
 import 'package:firstapp/providers/user_provider.dart';
 import 'package:firstapp/screens/account.dart';
+import 'package:firstapp/screens/login.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -53,7 +54,14 @@ class MyAppBar extends StatelessWidget {
                     child: const Text('Cancel'),
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const Login();
+                        }),
+                      );
+                    },
                     child: const Text('Login'),
                   )
                 ],
