@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:firstapp/providers/cart_provider.dart';
 import 'package:firstapp/providers/food_image_provider.dart';
 import 'package:firstapp/providers/order_provider.dart';
+import 'package:firstapp/providers/user_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,17 +47,30 @@ void main() async {
     ),
   );
 
+  const DialogTheme myDialogTheme = DialogTheme(
+    shape: RoundedRectangleBorder(
+      side: BorderSide(color: Colors.black38),
+      borderRadius: BorderRadius.all(
+        Radius.circular(4.0),
+      ),
+    ),
+  );
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => MyCart()),
       ChangeNotifierProvider(create: (_) => FoodImages()),
       ChangeNotifierProvider(create: (_) => MyOrders()),
+      ChangeNotifierProvider(
+        create: (_) => MyAccountDetails(),
+      ),
     ],
     child: MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         cardTheme: myCardTheme,
         primarySwatch: Colors.blueGrey,
+        dialogTheme: myDialogTheme,
         outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),
         elevatedButtonTheme:
             ElevatedButtonThemeData(style: elevatedButtonStyle),

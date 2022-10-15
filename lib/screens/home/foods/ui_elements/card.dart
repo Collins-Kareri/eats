@@ -32,7 +32,11 @@ class _FoodsContentState extends State<FoodsContent> {
               .addImage({'foodname': foodname, 'coverImg': coverImg});
 
           return Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              bottom: 16.0,
+            ),
             child: Card(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
