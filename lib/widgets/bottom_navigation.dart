@@ -19,8 +19,8 @@ class BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
         key: bottomNavBarGlobalKey,
-        iconSize: 28.0,
-        selectedFontSize: 18.0,
+        iconSize: 24.0,
+        selectedFontSize: 16.0,
         unselectedFontSize: 16.0,
         selectedItemColor: Colors.black,
         currentIndex: widget._currentIndex,
@@ -29,10 +29,6 @@ class BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_sharp),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.theaters_sharp),
-            label: 'Events',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.delivery_dining_sharp),

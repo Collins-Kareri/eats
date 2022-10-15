@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firstapp/widgets/app_bar.dart';
 import 'package:firstapp/screens/home/homepage_content.dart';
-import 'package:firstapp/screens/events.dart';
 import 'package:firstapp/screens/orders.dart';
 import 'package:firstapp/widgets/bottom_navigation.dart';
 
@@ -34,7 +33,6 @@ class _HomePageState extends State<HomePage> {
 
   static final List<Widget> pageContent = [
     HomePageContent(_myTabs),
-    const Center(child: Events()),
     const Center(child: Orders()),
   ];
 
@@ -50,7 +48,9 @@ class _HomePageState extends State<HomePage> {
       length: tabs.length,
       child: Scaffold(
           appBar: const PreferredSize(
-              preferredSize: Size.fromHeight(50.0), child: MyAppBar()),
+            preferredSize: Size.fromHeight(50.0),
+            child: MyAppBar(),
+          ),
           body: pageContent[widget._currentPageIndex],
           bottomNavigationBar:
               BottomNavBar(widget._currentPageIndex, _onItemTapped)),

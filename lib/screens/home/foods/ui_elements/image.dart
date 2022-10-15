@@ -15,14 +15,16 @@ class _MyImageState extends State<MyImage> {
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
-      widthFactor: 1,
-      heightFactor: 1,
+      widthFactor: 0.9,
+      heightFactor: 0.9,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(6),
         child: Image.network(
           widget._src,
           fit: BoxFit.fill,
           filterQuality: FilterQuality.medium,
+          cacheHeight: 300,
+          cacheWidth: 300,
           loadingBuilder: (context, child, loadingProgress) {
             if (loadingProgress == null) {
               return child;

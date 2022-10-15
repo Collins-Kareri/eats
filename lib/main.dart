@@ -13,7 +13,7 @@ void main() async {
   final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     foregroundColor: Colors.black,
     shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
     ),
   ).copyWith(
       side: MaterialStateProperty.resolveWith(
@@ -26,7 +26,7 @@ void main() async {
     fixedSize: const Size.fromWidth(90.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
-        Radius.circular(20.0),
+        Radius.circular(8.0),
       ),
     ),
     padding: const EdgeInsets.only(
@@ -34,6 +34,16 @@ void main() async {
       bottom: 16.0,
     ),
     elevation: 4.0,
+  );
+
+  const CardTheme myCardTheme = CardTheme(
+    elevation: 1.0,
+    shape: RoundedRectangleBorder(
+      side: BorderSide(color: Colors.black38),
+      borderRadius: BorderRadius.all(
+        Radius.circular(8.0),
+      ),
+    ),
   );
 
   runApp(MultiProvider(
@@ -45,6 +55,7 @@ void main() async {
     child: MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        cardTheme: myCardTheme,
         primarySwatch: Colors.blueGrey,
         outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),
         elevatedButtonTheme:

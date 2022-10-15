@@ -8,11 +8,12 @@ class CartItemCard extends StatelessWidget {
 
   final ButtonStyle cartItemButtonStyle = IconButton.styleFrom(
     foregroundColor: Colors.black,
-    backgroundColor: Colors.blueGrey,
-    surfaceTintColor: Colors.blueGrey,
-    elevation: 2.0,
+    elevation: 1.0,
     shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      borderRadius: BorderRadius.all(
+        Radius.circular(6.0),
+      ),
+      side: BorderSide(color: Colors.black),
     ),
   );
 
@@ -34,12 +35,10 @@ class CartItemCard extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Card(
-                surfaceTintColor: Colors.black,
-                elevation: 4.0,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     children: [
                       SizedBox(
@@ -49,10 +48,10 @@ class CartItemCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 200.0,
+                              height: 200.0,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(4),
                                 child: Image.network(
                                   coverImg,
                                   fit: BoxFit.fill,
@@ -83,8 +82,20 @@ class CartItemCard extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(_cartItems[index]["foodname"]),
-                                  Text(_cartItems[index]["price"]),
+                                  Text(
+                                    _cartItems[index]["foodname"],
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                  Text(
+                                    _cartItems[index]["price"],
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15.0,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),

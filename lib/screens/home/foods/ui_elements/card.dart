@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/widgets/foods/ui_elements/image.dart';
-import 'package:firstapp/widgets/foods/ui_elements/card_bottom.dart';
+import 'package:firstapp/screens/home/foods/ui_elements/image.dart';
+import 'package:firstapp/screens/home/foods/ui_elements/card_bottom.dart';
 import 'package:provider/provider.dart';
 import 'package:firstapp/providers/food_image_provider.dart';
 
@@ -34,14 +34,13 @@ class _FoodsContentState extends State<FoodsContent> {
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Card(
-              elevation: 4,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
                     height: 300,
                     decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(4))),
+                        borderRadius: BorderRadius.all(Radius.circular(2))),
                     child: MyImage(coverImg),
                   ),
                   CardBottom(price, foodname)
