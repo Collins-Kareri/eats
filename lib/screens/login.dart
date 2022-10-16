@@ -14,10 +14,11 @@ class Login extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-                (route) => false);
+              MaterialPageRoute(
+                builder: (context) => HomePage(),
+              ),
+              (route) => false,
+            );
           },
           iconSize: 28.0,
           icon: const Icon(Icons.arrow_back_rounded),
