@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/widgets/app_bar.dart';
-import 'package:firstapp/screens/home/homepage_content.dart';
-import 'package:firstapp/screens/orders.dart';
-import 'package:firstapp/widgets/bottom_navigation.dart';
+import 'package:eats/widgets/app_bar.dart';
+import 'package:eats/screens/home/homepage_content.dart';
+import 'package:eats/screens/orders.dart';
+import 'package:eats/widgets/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
   late int _currentPageIndex;

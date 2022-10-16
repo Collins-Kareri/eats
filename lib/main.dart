@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/screens/home/home_page.dart';
+import 'package:eats/screens/home/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/cart_provider.dart';
-import 'package:firstapp/providers/food_image_provider.dart';
-import 'package:firstapp/providers/order_provider.dart';
-import 'package:firstapp/providers/user_provider.dart';
+import 'package:eats/providers/cart_provider.dart';
+import 'package:eats/providers/food_image_provider.dart';
+import 'package:eats/providers/order_provider.dart';
+import 'package:eats/providers/user_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

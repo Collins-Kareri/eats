@@ -1,4 +1,4 @@
-# firstapp
+# eats
 
 A new Flutter project.
 

@@ -1,4 +1,4 @@
-package domain.name.firstapp
+package domain.name.eats
 
 import io.flutter.embedding.android.FlutterActivity
 

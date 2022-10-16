@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/cart_provider.dart';
+import 'package:eats/providers/cart_provider.dart';
 
 class CardBottom extends StatelessWidget {
   late final String _price;

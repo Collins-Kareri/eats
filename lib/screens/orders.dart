@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/order_provider.dart';
+import 'package:eats/providers/order_provider.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});

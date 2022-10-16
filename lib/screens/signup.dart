@@ -1,7 +1,7 @@
-import 'package:firstapp/screens/login.dart';
+import 'package:eats/screens/login.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/screens/home/home_page.dart';
-import 'package:firstapp/shared_preferences.dart';
+import 'package:eats/screens/home/home_page.dart';
+import 'package:eats/shared_preferences.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});

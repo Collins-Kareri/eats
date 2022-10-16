@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/cart_provider.dart';
-import 'package:firstapp/screens/mycart/cart_page.dart';
-import 'package:firstapp/providers/user_provider.dart';
-import 'package:firstapp/screens/account.dart';
-import 'package:firstapp/screens/login.dart';
+import 'package:eats/providers/cart_provider.dart';
+import 'package:eats/screens/mycart/cart_page.dart';
+import 'package:eats/providers/user_provider.dart';
+import 'package:eats/screens/account.dart';
+import 'package:eats/screens/login.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});

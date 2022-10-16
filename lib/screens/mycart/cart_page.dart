@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:firstapp/providers/cart_provider.dart';
-import 'package:firstapp/screens/mycart/order_button.dart';
-import 'package:firstapp/screens/mycart/emptycart_state.dart';
-import 'package:firstapp/screens/mycart/cartitem_card.dart';
+import 'package:eats/providers/cart_provider.dart';
+import 'package:eats/screens/mycart/order_button.dart';
+import 'package:eats/screens/mycart/emptycart_state.dart';
+import 'package:eats/screens/mycart/cartitem_card.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firstapp/screens/home/home_page.dart';
-import 'package:firstapp/screens/signup.dart';
+import 'package:eats/screens/home/home_page.dart';
+import 'package:eats/screens/signup.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
