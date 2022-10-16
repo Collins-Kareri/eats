@@ -47,11 +47,18 @@ class MyAppBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  OutlinedButton(
+                  TextButton(
                     onPressed: () {
                       Navigator.pop(context, {'action': 'close'});
                     },
-                    child: const Text('Cancel'),
+                    child: const Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        decorationStyle: TextDecorationStyle.solid,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
                   OutlinedButton(
                     onPressed: () {

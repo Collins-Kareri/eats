@@ -21,7 +21,7 @@ class _OrderButtonState extends State<OrderButton> {
       context,
       MaterialPageRoute(builder: (context) {
         return HomePage(
-          index: 2,
+          index: 1,
         );
       }),
     );
@@ -51,9 +51,7 @@ class _OrderButtonState extends State<OrderButton> {
                 TextField(
                   controller: myInputController,
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
                     labelText: 'Enter location',
-                    isDense: true,
                   ),
                 ),
                 Padding(

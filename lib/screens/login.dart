@@ -13,7 +13,11 @@ class Login extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+                (route) => false);
           },
           iconSize: 28.0,
           icon: const Icon(Icons.arrow_back_rounded),
@@ -33,9 +37,7 @@ class Login extends StatelessWidget {
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
                       labelText: 'U s e r n a m e',
-                      isDense: true,
                     ),
                   ),
                 ),
@@ -43,9 +45,7 @@ class Login extends StatelessWidget {
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
                       labelText: 'P a s s w o r d',
-                      isDense: true,
                     ),
                     obscureText: true,
                   ),
@@ -70,10 +70,6 @@ class Login extends StatelessWidget {
                             }),
                           );
                         },
-                        style: ButtonStyle(
-                          foregroundColor: MaterialStateColor.resolveWith(
-                              (states) => Colors.black),
-                        ),
                         child: const Text(
                           ' Sign up',
                           style: TextStyle(

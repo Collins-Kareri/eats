@@ -30,10 +30,11 @@ void main() async {
         Radius.circular(8.0),
       ),
     ),
-    padding: const EdgeInsets.symmetric(
-      vertical: 8.0,
-    ),
     elevation: 4.0,
+  );
+
+  final ButtonStyle textButtonStyle = TextButton.styleFrom(
+    foregroundColor: Colors.black,
   );
 
   const CardTheme myCardTheme = CardTheme(
@@ -55,24 +56,25 @@ void main() async {
     ),
   );
 
+  const InputDecorationTheme myInputTheme = InputDecorationTheme(
+    filled: true,
+    fillColor: Colors.white,
+    isDense: true,
+  );
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => MyCart()),
       ChangeNotifierProvider(create: (_) => FoodImages()),
       ChangeNotifierProvider(create: (_) => MyOrders()),
-      ChangeNotifierProvider(
-        create: (_) => MyAccountDetails(),
-      ),
+      ChangeNotifierProvider(create: (_) => MyAccountDetails()),
     ],
     child: MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Eats',
       theme: ThemeData(
+        bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black),
         cardTheme: myCardTheme,
-        inputDecorationTheme: const InputDecorationTheme(
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(),
-        ),
+        inputDecorationTheme: myInputTheme,
         primarySwatch: Colors.blueGrey,
         dialogTheme: myDialogTheme,
         outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle),
@@ -82,7 +84,7 @@ void main() async {
         tabBarTheme: const TabBarTheme(
           labelColor: Colors.black,
         ),
-        bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black),
+        textButtonTheme: TextButtonThemeData(style: textButtonStyle),
         useMaterial3: true,
       ),
       home: HomePage(),
